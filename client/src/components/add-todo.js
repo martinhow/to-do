@@ -1,16 +1,16 @@
 import React, { useRef } from 'react';
-import uuidv4 from '../uuid/v4';
+import { v4 as uuid } from 'uuid';
 
 function AddTodo({ setTodos }) {
   const todoNameRef = useRef()
 
   function handleAddTodo(evnt) {
-    const name = todoNameRef.current.value;
-    if (name === '') return
-    console.log(name);
-    setTodos(prevTodos => {
-      return [...prevTodos, {id: uuidv4, name: name, complete: false}]
-    })
+    var name = todoNameRef.current.value;
+    if (name === '') return;
+    setTodos(prevTodos =>
+      [...prevTodos, {id: uuid(), name: name, complete: false}]
+    );
+    todoNameRef.current.value = '';
   }
 
   return (
