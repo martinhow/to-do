@@ -17,8 +17,6 @@ function AddTodo({ setTodos }) {
     <div>
       <input ref={todoNameRef} type="text" />
       <button onClick={handleAddTodo}>Add Todo</button>
-      <button>Complete Todo</button>
-      <button>Clear All</button>
     </div>
   )
 }

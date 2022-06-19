@@ -1,14 +1,10 @@
+import { toggleTodo } from "./util"
+
 function NextTodo({ todo, todos, setTodos }) {
 
-  function toggleTodo(id) {
-    const newTodos = [...todos]
-    const todo = newTodos.find(todo => todo.id === id)
-    todo.complete = !todo.complete;
-    setTodos(newTodos)
-  }
-
   function handleClick() {
-    toggleTodo(todo.id)
+    const newTodos = toggleTodo(todo.id, todos)
+    setTodos(newTodos)
   }
 
   return (
